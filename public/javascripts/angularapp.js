@@ -126,7 +126,7 @@ function($scope){
 
   $scope.timeChange = function(goalLength, oldLength) {
     if (oldLength) {
-      if (oldLength <= 5) {
+      if (oldLength <= 5 && oldLength > 0) {
         $scope.posts[0].weightedAverage += 10;
         $scope.posts[1].weightedAverage -= 5;
         $scope.posts[2].weightedAverage -= 5;
@@ -158,7 +158,7 @@ function($scope){
       };
     };
     
-    if (goalLength <= 5) {
+    if (goalLength <= 5 && goalLength > 0) {
         $scope.posts[0].weightedAverage -= 10;
         $scope.posts[1].weightedAverage += 5;
         $scope.posts[2].weightedAverage += 5;
@@ -192,25 +192,133 @@ function($scope){
   
   $scope.saveChange = function(saveAmount, oldAmount) {
     if (oldAmount) {
-      if (oldAmount > 1000) {
-        $scope.posts[6].weightedAverage -= 3;
+      if (oldAmount < 1000 && oldAmount > 0) {
+        $scope.posts[0].weightedAverage += 5;
+        $scope.posts[1].weightedAverage -= 0;
+        $scope.posts[2].weightedAverage -= 0;
+        $scope.posts[3].weightedAverage -= 5;
+        $scope.posts[4].weightedAverage -= 10;
+        $scope.posts[5].weightedAverage -= 10;
+        $scope.posts[6].weightedAverage -= 15;
+        $scope.posts[7].weightedAverage -= 0;
+      };
+      if (oldAmount >= 1000 && oldAmount < 5000) {
+        $scope.posts[0].weightedAverage -= 10;
+        $scope.posts[1].weightedAverage -= 10;
+        $scope.posts[2].weightedAverage -= 10;
+        $scope.posts[3].weightedAverage -= 10;
+        $scope.posts[4].weightedAverage -= 10;
+        $scope.posts[5].weightedAverage -= 15;
+        $scope.posts[6].weightedAverage -= 0;
+        $scope.posts[7].weightedAverage -= 10;
+      };
+      if (oldAmount >= 5000) {
+        $scope.posts[0].weightedAverage += 15;
+        $scope.posts[1].weightedAverage -= 15;
+        $scope.posts[2].weightedAverage -= 15;
+        $scope.posts[3].weightedAverage -= 15;
+        $scope.posts[4].weightedAverage -= 10;
+        $scope.posts[5].weightedAverage -= 10;
+        $scope.posts[6].weightedAverage -= 5;
+        $scope.posts[7].weightedAverage -= 20;
       };
     };
     
-    if (saveAmount > 1000) {
-      $scope.posts[6].weightedAverage += 3;
+    if (saveAmount < 1000 && saveAmount > 0) {
+      $scope.posts[0].weightedAverage -= 5;
+      $scope.posts[1].weightedAverage += 0;
+      $scope.posts[2].weightedAverage += 0;
+      $scope.posts[3].weightedAverage += 5;
+      $scope.posts[4].weightedAverage += 10;
+      $scope.posts[5].weightedAverage += 10;
+      $scope.posts[6].weightedAverage += 15;
+      $scope.posts[7].weightedAverage += 0;
+    };
+    if (saveAmount >= 1000 && saveAmount < 5000) {
+      $scope.posts[0].weightedAverage += 10;
+      $scope.posts[1].weightedAverage += 10;
+      $scope.posts[2].weightedAverage += 10;
+      $scope.posts[3].weightedAverage += 10;
+      $scope.posts[4].weightedAverage += 10;
+      $scope.posts[5].weightedAverage += 15;
+      $scope.posts[6].weightedAverage += 0;
+      $scope.posts[7].weightedAverage += 10;
+    };
+    if (saveAmount >= 5000) {
+      $scope.posts[0].weightedAverage -= 15;
+      $scope.posts[1].weightedAverage += 15;
+      $scope.posts[2].weightedAverage += 15;
+      $scope.posts[3].weightedAverage += 15;
+      $scope.posts[4].weightedAverage += 10;
+      $scope.posts[5].weightedAverage += 10;
+      $scope.posts[6].weightedAverage += 5;
+      $scope.posts[7].weightedAverage += 20;
     };
   };
 
   $scope.accountChange = function(accountAmount, oldAmount) {
     if (oldAmount) {
-      if (oldAmount > 9000) {
-        $scope.posts[5].weightedAverage -= 3;
+      if (oldAmount < 10000 && oldAmount > 0) {
+        $scope.posts[0].weightedAverage += 5;
+        $scope.posts[1].weightedAverage -= 0;
+        $scope.posts[2].weightedAverage -= 0;
+        $scope.posts[3].weightedAverage -= 5;
+        $scope.posts[4].weightedAverage -= 10;
+        $scope.posts[5].weightedAverage -= 10;
+        $scope.posts[6].weightedAverage -= 15;
+        $scope.posts[7].weightedAverage -= 0;
+      };
+      if (oldAmount >= 10000 && oldAmount < 50000) {
+        $scope.posts[0].weightedAverage -= 10;
+        $scope.posts[1].weightedAverage -= 10;
+        $scope.posts[2].weightedAverage -= 10;
+        $scope.posts[3].weightedAverage -= 10;
+        $scope.posts[4].weightedAverage -= 10;
+        $scope.posts[5].weightedAverage -= 15;
+        $scope.posts[6].weightedAverage -= 0;
+        $scope.posts[7].weightedAverage -= 10;
+      };
+      if (oldAmount >= 50000) {
+        $scope.posts[0].weightedAverage += 15;
+        $scope.posts[1].weightedAverage -= 15;
+        $scope.posts[2].weightedAverage -= 15;
+        $scope.posts[3].weightedAverage -= 15;
+        $scope.posts[4].weightedAverage -= 10;
+        $scope.posts[5].weightedAverage -= 10;
+        $scope.posts[6].weightedAverage -= 5;
+        $scope.posts[7].weightedAverage -= 20;
       };
     };
     
-    if (accountAmount > 9000) {
-      $scope.posts[5].weightedAverage += 3;
+    if (accountAmount < 10000 && accountAmount > 0) {
+      $scope.posts[0].weightedAverage -= 5;
+      $scope.posts[1].weightedAverage += 0;
+      $scope.posts[2].weightedAverage += 0;
+      $scope.posts[3].weightedAverage += 5;
+      $scope.posts[4].weightedAverage += 10;
+      $scope.posts[5].weightedAverage += 10;
+      $scope.posts[6].weightedAverage += 15;
+      $scope.posts[7].weightedAverage += 0;
+    };
+    if (accountAmount >= 10000 && accountAmount < 50000) {
+      $scope.posts[0].weightedAverage += 10;
+      $scope.posts[1].weightedAverage += 10;
+      $scope.posts[2].weightedAverage += 10;
+      $scope.posts[3].weightedAverage += 10;
+      $scope.posts[4].weightedAverage += 10;
+      $scope.posts[5].weightedAverage += 15;
+      $scope.posts[6].weightedAverage += 0;
+      $scope.posts[7].weightedAverage += 10;
+    };
+    if (accountAmount >= 50000) {
+      $scope.posts[0].weightedAverage -= 15;
+      $scope.posts[1].weightedAverage += 15;
+      $scope.posts[2].weightedAverage += 15;
+      $scope.posts[3].weightedAverage += 15;
+      $scope.posts[4].weightedAverage += 10;
+      $scope.posts[5].weightedAverage += 10;
+      $scope.posts[6].weightedAverage += 5;
+      $scope.posts[7].weightedAverage += 20;
     };
   };
 
@@ -223,19 +331,47 @@ function($scope){
   $scope.rentChange = function(newObj, oldObj){
       if (oldObj) {
         if (oldObj.name == 'Rent') {
-          $scope.posts[7].weightedAverage -= 1;
+          $scope.posts[0].weightedAverage -= 20;
+          $scope.posts[1].weightedAverage -= 10;
+          $scope.posts[2].weightedAverage -= 10;
+          $scope.posts[3].weightedAverage -= 10;
+          $scope.posts[4].weightedAverage -= 15;
+          $scope.posts[5].weightedAverage -= 15;
+          $scope.posts[6].weightedAverage -= 10;
+          $scope.posts[7].weightedAverage -= 5;
         };
         if (oldObj.name == 'Own') {
-          $scope.posts[3].weightedAverage -= 2;
+          $scope.posts[0].weightedAverage -= 15;
+          $scope.posts[1].weightedAverage -= 15;
+          $scope.posts[2].weightedAverage -= 15;
+          $scope.posts[3].weightedAverage -= 15;
+          $scope.posts[4].weightedAverage -= 15;
+          $scope.posts[5].weightedAverage -= 10;
+          $scope.posts[6].weightedAverage -= 5;
+          $scope.posts[7].weightedAverage -= 15;
         };
         
       };
       
       if (newObj.name == 'Rent') {
-        $scope.posts[7].weightedAverage += 1;
+        $scope.posts[0].weightedAverage += 20;
+        $scope.posts[1].weightedAverage += 10;
+        $scope.posts[2].weightedAverage += 10;
+        $scope.posts[3].weightedAverage += 10;
+        $scope.posts[4].weightedAverage += 15;
+        $scope.posts[5].weightedAverage += 15;
+        $scope.posts[6].weightedAverage += 10;
+        $scope.posts[7].weightedAverage += 5;
       };
       if (newObj.name == 'Own') {
-        $scope.posts[3].weightedAverage += 2;
+        $scope.posts[0].weightedAverage += 15;
+        $scope.posts[1].weightedAverage += 15;
+        $scope.posts[2].weightedAverage += 15;
+        $scope.posts[3].weightedAverage += 15;
+        $scope.posts[4].weightedAverage += 15;
+        $scope.posts[5].weightedAverage += 10;
+        $scope.posts[6].weightedAverage += 5;
+        $scope.posts[7].weightedAverage += 15;
       };
       
   };
