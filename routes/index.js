@@ -10,5 +10,11 @@ router.get('/real-estate', function(req, res, next) {
   res.render('real-estate', { title: 'Real Estate' });
 });
 
+router.get('/login', function(req, res, next) {
+	res.render('login', {title: "Login"})
+});
+
+
+
 
 module.exports = router;

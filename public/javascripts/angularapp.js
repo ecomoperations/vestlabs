@@ -1,4 +1,4 @@
-var app = angular.module('investar', ['ui.router']);
+var app = angular.module('investar', ['ui.router', 'ngAnimate']);
 
 app.config([
 '$stateProvider',
@@ -9,39 +9,19 @@ function($stateProvider, $urlRouterProvider) {
       url: '/home',
       templateUrl: '/home.html',
       controller: 'MainCtrl'
+    }).state('life-insurance', {
+      url: '/life-insurance',
+      templateUrl: '/life-insurance.html',
+      controller: 'MainCtrl'
     });
 
   $urlRouterProvider.otherwise('home');
 }]);
 
-app.controller('MainCtrl', [
-'$scope',
-function($scope){
-
-  $scope.textSizeFunc = function(avg) {
-   if (avg >= 80 ) {return 35};
-   if (avg < 80 && avg > 50 ) {return 25};
-   if (avg <= 50 && avg > 35 ) {return 20};
-   if (avg <= 35 ) {return 15};
-  };
-
-  $scope.textWeightFunc = function(avg) {
-   if (avg >= 80 ) {return 900};
-   if (avg < 80 && avg > 50 ) {return 700};
-   if (avg <= 50 && avg > 35 ) {return 500};
-   if (avg <= 35 ) {return 300};
-  };
-
-  $scope.textOpacityFunc = function(avg) {
-   if (avg >= 80 ) {return 1.0};
-   if (avg < 80 && avg > 50 ) {return .7};
-   if (avg <= 50 && avg > 35 ) {return .5};
-   if (avg <= 35 ) {return .3};
-  };
-
-
-  $scope.posts = [
-    {investment: 'Real Estate', weightedAverage: 40},
+app.factory('posts', [function(){
+  var o = {
+    posts: [
+      {investment: 'Real Estate', weightedAverage: 40},
     {investment: 'Life Insurance', weightedAverage: 40},
     {investment: 'Stocks/Bonds', weightedAverage: 40},
     {investment: 'Startups/Lending', weightedAverage: 40},
@@ -49,7 +29,66 @@ function($scope){
     {investment: 'Pay Down Debt', weightedAverage: 40},
     {investment: 'Earn More', weightedAverage: 40},
     {investment: 'Cheat on Taxes', weightedAverage: 40}
-  ];
+    ]
+  };
+  return o;
+}]);
+
+app.controller('MainCtrl', [
+'$scope',
+'posts',
+function($scope, posts){
+
+  // $scope.textSizeFunc = function(avg) {
+  //  if (avg >= 80 ) {return 35};
+  //  if (avg < 80 && avg > 50 ) {return 25};
+  //  if (avg <= 50 && avg > 35 ) {return 20};
+  //  if (avg <= 35 ) {return 15};
+  // };
+
+  // $scope.textWeightFunc = function(avg) {
+  //  if (avg >= 80 ) {return 900};
+  //  if (avg < 80 && avg > 50 ) {return 700};
+  //  if (avg <= 50 && avg > 35 ) {return 500};
+  //  if (avg <= 35 ) {return 300};
+  // };
+
+  // $scope.textOpacityFunc = function(avg) {
+  //  if (avg >= 80 ) {return 1.0};
+  //  if (avg < 80 && avg > 50 ) {return .7};
+  //  if (avg <= 50 && avg > 35 ) {return .5};
+  //  if (avg <= 35 ) {return .3};
+  // };
+
+  $scope.textSizeFunc = function(avg) {
+   if (avg >= 80 ) {return 'xl-text'};
+   if (avg < 80 && avg > 50 ) {return 'l-text'};
+   if (avg <= 50 && avg > 35 ) {return 'm-text'};
+   if (avg <= 35 ) {return 's-text'};
+  };
+
+  
+
+  // $scope.textWeightFunc = function(avg) {
+  //  if (avg >= 80 ) {return 900};
+  //  if (avg < 80 && avg > 50 ) {return 700};
+  //  if (avg <= 50 && avg > 35 ) {return 500};
+  //  if (avg <= 35 ) {return 300};
+  // };
+
+  // $scope.textOpacityFunc = function(avg) {
+  //  if (avg >= 80 ) {return 1.0};
+  //  if (avg < 80 && avg > 50 ) {return .7};
+  //  if (avg <= 50 && avg > 35 ) {return .5};
+  //  if (avg <= 35 ) {return .3};
+  // };
+
+
+
+
+  $scope.posts = posts.posts;
+
+ 
 
 
   $scope.goalItems = [
@@ -279,7 +318,7 @@ function($scope){
         $scope.posts[7].weightedAverage -= 10;
       };
       if (oldAmount >= 50000) {
-        $scope.posts[0].weightedAverage += 15;
+        $scope.posts[0].weightedAverage -= 15;
         $scope.posts[1].weightedAverage -= 15;
         $scope.posts[2].weightedAverage -= 15;
         $scope.posts[3].weightedAverage -= 15;
@@ -311,7 +350,7 @@ function($scope){
       $scope.posts[7].weightedAverage += 10;
     };
     if (accountAmount >= 50000) {
-      $scope.posts[0].weightedAverage -= 15;
+      $scope.posts[0].weightedAverage += 15;
       $scope.posts[1].weightedAverage += 15;
       $scope.posts[2].weightedAverage += 15;
       $scope.posts[3].weightedAverage += 15;
@@ -424,6 +463,9 @@ function($scope){
     if (debtAmount > 5000) {
       $scope.posts[5].weightedAverage += 6;
     };
+  };
+  $scope.allCompleted = function() {
+    console.log($scope.rentItem.$valid)
   };
 
 
