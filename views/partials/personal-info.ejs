@@ -55,15 +55,21 @@
 
             <br>
               
-            <div class=" text-overlay" ng-show="!startForm.rentItem.$pristine">
-              <div class="sign-up-overlay">
-                Sign up now to get learn why you should invest in Real Estate
-                <!-- <input type="text" id="name" placeholder="@maridlcrmn" required> -->
-                <input  type="text" id="company" placeholder="Username" >
-                <input  type="text" id="company" placeholder="Password" >
-              </div>
-            </div>
+           
 
             <!-- <button type="submit" class="btn btn-default btn-lg submit"> Find a Freelancer </button> -->
             
         </form>
+        
+
+         <div class=" text-overlay" ng-show="!startForm.rentItem.$pristine">
+              <div class="sign-up-overlay">
+                <form action="/signup" method="post">
+                  Sign up now to get learn why you should invest in Real Estate
+                  <!-- <input type="text" id="name" placeholder="@maridlcrmn" required> -->
+                  <input  type="text" id="" placeholder="Username" >
+                  <input  type="password" id="" placeholder="Password" >
+                  <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+                </form>
+              </div>
+            </div>

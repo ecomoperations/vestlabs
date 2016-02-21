@@ -61,10 +61,10 @@ function($scope, posts){
   // };
 
   $scope.textSizeFunc = function(avg) {
-   if (avg >= 80 ) {return 'xl-text'};
-   if (avg < 80 && avg > 50 ) {return 'l-text'};
-   if (avg <= 50 && avg > 35 ) {return 'm-text'};
-   if (avg <= 35 ) {return 's-text'};
+   if (avg >= 100 ) {return 'xl-text'};
+   if (avg < 100 && avg > 70 ) {return 'l-text'};
+   if (avg <= 70 && avg >= 60 ) {return 'm-text'};
+   if (avg < 60 ) {return 's-text'};
   };
 
   

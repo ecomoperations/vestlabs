@@ -6,7 +6,7 @@
 
 body {
   padding: 50px;
-  font: 16px "Lato", Helvetica, Arial, sans-serif;
+  font: 300 16px "Lato", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -118,9 +118,10 @@ body {padding-top:50px;}
     vertical-align: middle;
 }
 .info h4 {
-    font-size: 26px;
-    letter-spacing: 2px;
+    font-size: 28px;
+    /* letter-spacing: 2px; */
     text-transform: uppercase;
+    font-weight: 900;
 }
 .info > p {
     color: #717171;
