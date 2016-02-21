@@ -17,18 +17,35 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var MongoStore = require('connect-mongo')(session);
+
 
 require('./models/Users');
 
 
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/investardatabase';
 
-mongoose.connect('mongodb://localhost/investardatabase');
+
+mongoose.connect(uristring, function (err, res) {
+      if (err) {
+      console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+      } else {
+      console.log ('Succeeded connected to: ' + uristring);
+      }
+    });
+
 require('./config/passport')(passport);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(session({ 
+  store: new MongoStore({
+    url: uristring
+  }),
   secret: process.env.SESSION_SECRET || 'secret',
   resave: false,
   saveUninitialized: false
