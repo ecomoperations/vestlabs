@@ -13,6 +13,10 @@ function($stateProvider, $urlRouterProvider) {
       url: '/life-insurance',
       templateUrl: '/life-insurance.html',
       controller: 'MainCtrl'
+    }).state('login', {
+      url: '/login',
+      templateUrl: '/login.html',
+      controller: 'MainCtrl'
     });
 
   $urlRouterProvider.otherwise('home');

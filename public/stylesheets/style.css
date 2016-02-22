@@ -196,7 +196,22 @@ body {padding-top:50px;}
 }
 
 
+/*+++++++++++++++++++++++++ Login ++++++++++++++++++++++++++++*/
 
+.login-widget {
+    padding-top: 10%;
+}
+
+.active-true {
+    color: green;
+    font-size: 2em;
+     -webkit-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+
+}
 
 
 
