@@ -10,16 +10,16 @@
             </div>
         </div>
 
-<form action="#" class="form-inline lead-big gr-background" role="form" name="startForm">
+<form action="/signup" method="post" class="form-inline lead-big gr-background" role="form" name="startForm">
             <div class="form-group">
               Hello, I want to 
               <!-- <input type="text" id="name" placeholder="@maridlcrmn" required> -->
-              <select ng-model="goalItem" ng-options="goalItem.name for goalItem in goalItems" ng-change="goalChange(goalItem, {{goalItem || 'null'}})"></select>
+              <select ng-model="goalItem" ng-options="goalItem.name for goalItem in goalItems" ng-change="goalChange(goalItem, {{goalItem || 'null'}})" name="goalItem"></select>
             </div>
 
             <div class="form-group">
               in
-              <input type="text" id="company" placeholder="10" ng-model="goalLength" ng-change="timeChange(goalLength, {{goalLength || 'null'}})" >
+              <input type="text" id="company" placeholder="10" ng-model="goalLength" ng-change="timeChange(goalLength, {{goalLength || 'null'}})" name="goalLength">
               years. 
             </div>
 
@@ -55,21 +55,21 @@
 
             <br>
               
-           
+           <div class=" text-overlay" ng-show="!startForm.rentItem.$pristine">
+              <div class="sign-up-overlay">
+                
+                  Sign up now to get learn why you should invest in Real Estate
+                  <!-- <input type="text" id="name" placeholder="@maridlcrmn" required> -->
+                  <input  type="text" id="" placeholder="Email" name="email" >
+                  <input  type="password" id="" placeholder="Password" name="password">
+                  <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+                
+              </div>
+            </div>
 
             <!-- <button type="submit" class="btn btn-default btn-lg submit"> Find a Freelancer </button> -->
             
         </form>
         
 
-         <div class=" text-overlay" ng-show="!startForm.rentItem.$pristine">
-              <div class="sign-up-overlay">
-                <form action="/signup" method="post">
-                  Sign up now to get learn why you should invest in Real Estate
-                  <!-- <input type="text" id="name" placeholder="@maridlcrmn" required> -->
-                  <input  type="text" id="" placeholder="Email" name="email" >
-                  <input  type="password" id="" placeholder="Password" name="password">
-                  <button type="submit" class="btn btn-warning btn-lg">Signup</button>
-                </form>
-              </div>
-            </div>
+     
