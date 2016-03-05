@@ -1,5 +1,5 @@
 <div class="">
-            <div class="box">
+            <!-- <div class="box">
                 <div class="box-icon">
                     <span class="fa fa-4x fa-user-plus"></span>
                 </div>
@@ -7,14 +7,15 @@
                     <h4 class="text-center">Who you Are</h4>
                   
                 </div>
-            </div>
-        </div>
+            </div> -->
+    <img class="img-lead" src="http://s24.postimg.org/sp8mqgtbp/Who_you_are.png">
+</div>
 
-<form action="/signup" method="post" class="form-inline lead-big gr-background" role="form" name="startForm">
+<form action="/signup" method="post"  class="form-inline lead-big gr-background" role="form" name="startForm">
             <div class="form-group">
               Hello, I want to 
               <!-- <input type="text" id="name" placeholder="@maridlcrmn" required> -->
-              <select ng-model="goalItem" ng-options="goalItem.name for goalItem in goalItems" ng-change="goalChange(goalItem, {{goalItem || 'null'}})" name="goalItem"></select>
+              <select ng-model="goalItem" ng-options="goalItem.name for goalItem in goalItems track by goalItem.name" ng-change="goalChange(goalItem, {{goalItem || 'null'}})" name="goalItem"></select>
             </div>
 
             <div class="form-group">
@@ -28,13 +29,13 @@
 
             <div class="form-group">
               I'm able to save
-              <input type="text" id="company" placeholder="10" ng-model="saveAmount" ng-change="saveChange(saveAmount, {{saveAmount || 'null'}})">
+              <input type="text" id="company" placeholder="10" ng-model="saveAmount" ng-change="saveChange(saveAmount, {{saveAmount || 'null'}})" name="saveAmount">
             	dollars a month
             </div>
             <div class="form-group">
 
               and currently have
-              <input type="text" id="company" placeholder="10,000" ng-model="accountAmount" ng-change="accountChange(accountAmount, {{accountAmount || 'null'}})">
+              <input type="text" id="company" placeholder="10,000" ng-model="accountAmount" ng-change="accountChange(accountAmount, {{accountAmount || 'null'}})" name="accountAmount">
               <!-- <textarea id="subject" placeholder="big amazing project" required></textarea> -->
               dollars in savings.
               I 
@@ -43,20 +44,23 @@
               my apartment/home, and have 
            
               
-              <select id="freelancer" ng-model="creditItem" ng-options="creditItem.name for creditItem in creditItems" ng-change="creditChange(creditItem, {{creditItem || 'null'}})"></select>
+              <select id="freelancer" ng-model="creditItem" ng-options="creditItem.name for creditItem in creditItems" ng-change="creditChange(creditItem, {{creditItem || 'null'}})" name="creditItem"></select>
              <!--  <input type="email" id="email" placeholder="name@mail.com" required> -->
               credit.
             
               I also have
-              <input type="text" id="company" placeholder="10,000" ng-model="debtAmount" ng-change="debtChange(debtAmount, {{debtAmount || 'null'}})">
+              <input type="text" id="company" placeholder="10,000" ng-model="debtAmount" ng-change="debtChange(debtAmount, {{debtAmount || 'null'}})" name="debtAmount">
               <!-- <textarea id="subject" placeholder="big amazing project" required></textarea> -->
-              dollars in debt with an interest rate higher than 7%.
+              dollars in debt with an interest rate higher than 7%.  
+                
             </div>
+            <h2 class="btn btn-success btn-lg" ng-show="!startForm.debtAmount.$pristine" ng-model="signUpButton" ng-click="signUpButton = true">Sign Up!</h2>
 
             <br>
               
-           <div class=" text-overlay" ng-show="!startForm.rentItem.$pristine">
+           <div class=" text-overlay" ng-hide="!signUpButton">
               <div class="sign-up-overlay">
+                  
                 
                   Sign up now to get learn why you should invest in Real Estate
                   <!-- <input type="text" id="name" placeholder="@maridlcrmn" required> -->
@@ -66,6 +70,7 @@
                 
               </div>
             </div>
+         
 
             <!-- <button type="submit" class="btn btn-default btn-lg submit"> Find a Freelancer </button> -->
             

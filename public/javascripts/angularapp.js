@@ -64,6 +64,10 @@ function($scope, posts){
   //  if (avg <= 35 ) {return .3};
   // };
 
+  // $scope.submit = function() {
+  //   $http.post(/signup)
+  // };
+
   $scope.textSizeFunc = function(avg) {
    if (avg >= 100 ) {return 'xl-text'};
    if (avg < 100 && avg > 70 ) {return 'l-text'};
@@ -96,14 +100,14 @@ function($scope, posts){
 
 
   $scope.goalItems = [
-    {name: 'Better With Money', age: 37 },
+    {name: 'Be Better With Money', age: 37 },
     {name: 'Maximize Retirement', age: 27 },
     {name: 'Receive Regular Income', age: 50 }
   ];
 
   $scope.goalChange = function(newObj, oldObj){
       if (oldObj) {
-        if (oldObj.name == 'Better With Money') {
+        if (oldObj.name == 'Be Better With Money') {
           $scope.posts[0].weightedAverage -= 15;
           $scope.posts[1].weightedAverage -= 10;
           $scope.posts[2].weightedAverage -= 15;
@@ -135,7 +139,7 @@ function($scope, posts){
         };
       };
       
-      if (newObj.name == 'Better With Money') {
+      if (newObj.name == 'Be Better With Money') {
         $scope.posts[0].weightedAverage += 15;
         $scope.posts[1].weightedAverage += 10;
         $scope.posts[2].weightedAverage += 15;

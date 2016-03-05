@@ -10,12 +10,15 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #47b8e0;
 }
 
 p {
 
 }
+
+.logo-nav{display:block;width:100%;}
+.logo-nav img{width:180px;max-width:100%}
 
 .gr-background {
     padding: 70px 0;
@@ -25,7 +28,7 @@ p {
 .lead-big {
     font-size: 28px;
     line-height: 48px;
-    color: #999;
+    color: #34314c;
 }
 .form-inline input,
 .form-inline textarea,
@@ -69,14 +72,14 @@ p {
 
 /*+++++++++++++ NAVBAR +++++++++++++++++++++*/
 
-nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #00B7FF; }
-nav.navbar-findcond a { color: #00B7FF; }
-nav.navbar-findcond ul.navbar-nav a { color: #00B7FF; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
+nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #47b8e0; }
+nav.navbar-findcond a { color: #47b8e0; }
+nav.navbar-findcond ul.navbar-nav a { color: #47b8e0; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
 nav.navbar-findcond ul.navbar-nav a:hover,
 nav.navbar-findcond ul.navbar-nav a:visited,
 nav.navbar-findcond ul.navbar-nav a:focus,
 nav.navbar-findcond ul.navbar-nav a:active { background: #fff; }
-nav.navbar-findcond ul.navbar-nav a:hover { border-color: #00B7FF; }
+nav.navbar-findcond ul.navbar-nav a:hover { border-color: #47b8e0; }
 nav.navbar-findcond li.divider { background: #ccc; }
 nav.navbar-findcond button.navbar-toggle { background: #f14444; border-radius: 2px; }
 nav.navbar-findcond button.navbar-toggle:hover { background: #999; }
@@ -93,6 +96,22 @@ nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #f
 /*++++++++++++++++++++++++++++ Top Box Options ++++++++++++++++++++++++*/
 
 body {padding-top:50px;}
+
+.img-lead {
+    vertical-align: middle;
+    width: 90%;
+    /* align-items: center; */
+    padding-left: 70px;
+}
+
+.img-lead-2 {
+    vertical-align: middle;
+    width: 90%;
+    height: 175px;
+    /* align-items: center; */
+    /* padding-left: 70px; */
+}
+
 
 .box {
     border-radius: 3px;

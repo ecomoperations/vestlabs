@@ -10,6 +10,12 @@ var userSchema = mongoose.Schema({
         email        : String,
         password     : String,
         goalItem	 : String,
+        goalLength   : Number,
+        saveAmount   : Number,
+        accountAmount: Number,
+        rentItem	 : String,
+        creditItem   : String,
+        debtAmount   : Number,
     }
 
 });
