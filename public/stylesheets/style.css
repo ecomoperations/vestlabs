@@ -17,6 +17,10 @@ p {
 
 }
 
+.row {
+    padding-top: 10px;
+}
+
 .logo-nav{display:block;width:100%;}
 .logo-nav img{width:180px;max-width:100%}
 

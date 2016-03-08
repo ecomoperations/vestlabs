@@ -16,6 +16,7 @@ var userSchema = mongoose.Schema({
         rentItem	 : String,
         creditItem   : String,
         debtAmount   : Number,
+        posts		 : [],
     }
 
 });

@@ -23,7 +23,9 @@ router.get('/profile', isLoggedIn, function(req, res) {
     
     res.render('profile.ejs', {
         
-        user : req.user // get the user out of session and pass to template
+        user : req.user,
+        title: 'Express', 
+        loggedIn: req.isAuthenticated()  // get the user out of session and pass to template
     });
 });
 

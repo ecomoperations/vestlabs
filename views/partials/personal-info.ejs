@@ -12,6 +12,9 @@
 </div>
 
 <form action="/signup" method="post"  class="form-inline lead-big gr-background" role="form" name="startForm">
+            <input type="hidden" ng-repeat="post in posts" name="posts" value="{{ post }}">
+              
+            </input>
             <div class="form-group">
               Hello, I want to 
               <!-- <input type="text" id="name" placeholder="@maridlcrmn" required> -->
@@ -40,11 +43,11 @@
               dollars in savings.
               I 
 
-              <select ng-model="rentItem" name="rentItem"  ng-options="rentItem.name for rentItem in rentItems" ng-change="rentChange(rentItem, {{rentItem || 'null'}})"></select>
+              <select ng-model="rentItem" name="rentItem"  ng-options="rentItem.name for rentItem in rentItems track by rentItem.name" ng-change="rentChange(rentItem, {{rentItem || 'null'}})"></select>
               my apartment/home, and have 
            
               
-              <select id="freelancer" ng-model="creditItem" ng-options="creditItem.name for creditItem in creditItems" ng-change="creditChange(creditItem, {{creditItem || 'null'}})" name="creditItem"></select>
+              <select id="freelancer" ng-model="creditItem" ng-options="creditItem.name for creditItem in creditItems track by creditItem.name" ng-change="creditChange(creditItem, {{creditItem || 'null'}})" name="creditItem"></select>
              <!--  <input type="email" id="email" placeholder="name@mail.com" required> -->
               credit.
             
