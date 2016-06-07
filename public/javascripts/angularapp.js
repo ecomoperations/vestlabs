@@ -25,14 +25,14 @@ function($stateProvider, $urlRouterProvider) {
 app.factory('posts', [function(){
   var o = {
     posts: [
-      {investment: 'Real Estate', weightedAverage: 40},
-    {investment: 'Life Insurance', weightedAverage: 40},
-    {investment: 'Stocks/Bonds', weightedAverage: 40},
-    {investment: 'Startups/Lending', weightedAverage: 40},
-    {investment: 'IRA/401k', weightedAverage: 40},
-    {investment: 'Pay Down Debt', weightedAverage: 40},
-    {investment: 'Earn More', weightedAverage: 40},
-    {investment: 'Cheat on Taxes', weightedAverage: 40}
+      {investment: 'Real Estate', weightedAverage: 40, postImg: "http://s7.postimg.org/dj6l186qz/Untitled_design_3.png"},
+    {investment: 'Life Insurance', weightedAverage: 40, postImg: "http://s7.postimg.org/57atzz9d7/Untitled_design_2.png"},
+    {investment: 'Stocks/Bonds', weightedAverage: 40, postImg: "http://s7.postimg.org/ikdz2le7f/Untitled_design_6.png"},
+    {investment: 'Startups/Lending', weightedAverage: 40, postImg: "http://s7.postimg.org/s3nnw21pn/Untitled_design_5.png"},
+    {investment: 'IRA/401k', weightedAverage: 40, postImg: "http://s7.postimg.org/tmj2118a3/Untitled_design_1.png"},
+    {investment: 'Pay Down Debt', weightedAverage: 40, postImg: "http://s7.postimg.org/8s6pj7dwr/Untitled_design_7.png"},
+    {investment: 'Earn More', weightedAverage: 40, postImg: "http://s7.postimg.org/q6qxrhb1n/Untitled_design.png"},
+    {investment: 'Cheat on Taxes', weightedAverage: 40, postImg: "http://s7.postimg.org/tl947m6gb/Untitled_design_4.png"}
     ]
   };
   return o;

@@ -17,6 +17,11 @@ p {
 
 }
 
+.vest-img {
+    height: 300px; 
+    width: 700px;
+}
+
 .row {
     padding-top: 10px;
 }
