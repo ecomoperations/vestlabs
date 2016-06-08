@@ -24,7 +24,7 @@
             </a>
         </li> -->
          <li ng-repeat="post in posts | orderBy:'-weightedAverage'" class="animate {{textSizeFunc(post.weightedAverage)}}">
-            <a href="#/life-insurance">
+            <a href={{post.urlPath}} >
                 <i class="fa fa-home fa-fw"></i>{{post.investment}}-{{post.weightedAverage}}
             </a>
         </li>

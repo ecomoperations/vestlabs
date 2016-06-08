@@ -17,6 +17,34 @@ function($stateProvider, $urlRouterProvider) {
       url: '/login',
       templateUrl: '/login.html',
       controller: 'MainCtrl'
+    }).state('real-estate', {
+      url: '/real-estate',
+      templateUrl: '/real-estate.html',
+      controller: 'MainCtrl'
+    }).state('stocks-bonds', {
+      url: '/stocks-bonds',
+      templateUrl: '/stocks-bonds.html',
+      controller: 'MainCtrl'
+    }).state('startups-lending', {
+      url: '/startups-lending',
+      templateUrl: '/startups-lending.html',
+      controller: 'MainCtrl'
+    }).state('ira-401k', {
+      url: '/ira-401k',
+      templateUrl: '/ira-401k.html',
+      controller: 'MainCtrl'
+    }).state('pay-down-debt', {
+      url: '/pay-down-debt',
+      templateUrl: '/pay-down-debt.html',
+      controller: 'MainCtrl'
+    }).state('earn-more', {
+      url: '/earn-more',
+      templateUrl: '/earn-more.html',
+      controller: 'MainCtrl'
+    }).state('cheat-on-taxes', {
+      url: '/cheat-on-taxes',
+      templateUrl: '/cheat-on-taxes.html',
+      controller: 'MainCtrl'
     });
 
   $urlRouterProvider.otherwise('home');
@@ -25,14 +53,14 @@ function($stateProvider, $urlRouterProvider) {
 app.factory('posts', [function(){
   var o = {
     posts: [
-      {investment: 'Real Estate', weightedAverage: 40, postImg: "http://s7.postimg.org/dj6l186qz/Untitled_design_3.png"},
-    {investment: 'Life Insurance', weightedAverage: 40, postImg: "http://s7.postimg.org/57atzz9d7/Untitled_design_2.png"},
-    {investment: 'Stocks/Bonds', weightedAverage: 40, postImg: "http://s7.postimg.org/ikdz2le7f/Untitled_design_6.png"},
-    {investment: 'Startups/Lending', weightedAverage: 40, postImg: "http://s7.postimg.org/s3nnw21pn/Untitled_design_5.png"},
-    {investment: 'IRA/401k', weightedAverage: 40, postImg: "http://s7.postimg.org/tmj2118a3/Untitled_design_1.png"},
-    {investment: 'Pay Down Debt', weightedAverage: 40, postImg: "http://s7.postimg.org/8s6pj7dwr/Untitled_design_7.png"},
-    {investment: 'Earn More', weightedAverage: 40, postImg: "http://s7.postimg.org/q6qxrhb1n/Untitled_design.png"},
-    {investment: 'Cheat on Taxes', weightedAverage: 40, postImg: "http://s7.postimg.org/tl947m6gb/Untitled_design_4.png"}
+      {investment: 'Real Estate', weightedAverage: 40, postImg: "http://s7.postimg.org/dj6l186qz/Untitled_design_3.png", urlPath: "#/real-estate"},
+    {investment: 'Life Insurance', weightedAverage: 40, postImg: "http://s7.postimg.org/57atzz9d7/Untitled_design_2.png", urlPath: "#/life-insurance"},
+    {investment: 'Stocks/Bonds', weightedAverage: 40, postImg: "http://s7.postimg.org/ikdz2le7f/Untitled_design_6.png", urlPath: "#/stocks-bonds"},
+    {investment: 'Startups/Lending', weightedAverage: 40, postImg: "http://s7.postimg.org/s3nnw21pn/Untitled_design_5.png", urlPath: "#/startups-lending"},
+    {investment: 'IRA/401k', weightedAverage: 40, postImg: "http://s7.postimg.org/tmj2118a3/Untitled_design_1.png", urlPath: "#/ira-401k"},
+    {investment: 'Pay Down Debt', weightedAverage: 40, postImg: "http://s7.postimg.org/8s6pj7dwr/Untitled_design_7.png", urlPath: "#/pay-down-debt"},
+    {investment: 'Earn More', weightedAverage: 40, postImg: "http://s7.postimg.org/q6qxrhb1n/Untitled_design.png", urlPath: "#/earn-more"},
+    {investment: 'Cheat on Taxes', weightedAverage: 40, postImg: "http://s7.postimg.org/tl947m6gb/Untitled_design_4.png", urlPath: "#/cheat-on-taxes"}
     ]
   };
   return o;
